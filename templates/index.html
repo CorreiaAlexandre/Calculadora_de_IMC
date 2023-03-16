@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculadora IMC</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-size: 28px;
+            text-align: center;
+            margin-top: 100px;
+        }
+        input[type="text"] {
+            font-size: 28px;
+            padding: 5px;
+            width: 300px;
+            text-align: center;
+        }
+        input[type="submit"] {
+            font-size: 28px;
+            padding: 5px 20px;
+            margin-top: 10px;
+            background-color: #00FF7F;
+            border: none;
+            color: black;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Calculadora IMC</h1>
+    <form method="POST" action="{{ url_for('resultado') }}">
+        <p>Peso (em kg): <input type="text" name="peso"></p>
+        <p>Altura (em m): <input type="text" name="altura"></p>
+        <input type="submit" value="Calcular">
+    </form>
+</body>
+</html>

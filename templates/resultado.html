@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Resultado do IMC</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background-color: black;
+            color: orange;
+            font-size: 28px;
+            text-align: center;
+            margin-top: 100px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Seu resultado de IMC é: {{ imc }}</h1>
+    {% if imc < 18.5 %}
+        <p>Abaixo do peso</p>
+    {% elif imc < 25 %}
+        <p>Peso normal</p>
+    {% elif imc < 30 %}
+        <p>Sobrepeso</p>
+    {% elif imc < 35 %}
+        <p>Obesidade grau 1</p>
+    {% elif imc < 40 %}
+        <p>Obesidade grau 2</p>
+    {% else %}
+        <p>Obesidade grau 3</p>
+    {% endif %}
+</body>
+</html>
