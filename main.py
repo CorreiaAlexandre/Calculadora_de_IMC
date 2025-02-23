@@ -8,8 +8,11 @@ def index():
 
 @app.route('/resultant', methods=['POST'])
 def resultado():
-    peso = float(request.form['peso'].replace(",", "."))  # Corrigido aqui
-    altura = float(request.form['altura'].replace(",", "."))
+    try:
+        peso = float(request.form['peso'].replace(",", "."))
+        altura = float(request.form['altura'].replace(",", "."))
+    except ValueError:
+        return "Erro: Por favor, insira valores numéricos válidos (use vírgula ou ponto)."
 
     imc = peso / altura ** 2
 
